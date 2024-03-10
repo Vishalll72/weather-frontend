@@ -1,0 +1,53 @@
+/* Overall styling for the location data component */
+.location-data {
+    margin: 0 auto; /* Center the component horizontally */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+    background-color: #f5e6f7;
+    color: #784bb3; 
+  }
+  
+  /* Heading */
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; /* Center align the heading */
+  }
+  
+  /* Data section */
+  .data {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .data h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: inherit; /* Inherit the parent's color */
+  }
+  
+  .data p {
+    font-size: 1rem;
+    margin-bottom: 0; /* Remove bottom margin for spacing */
+    color: inherit; /* Inherit the parent's color */
+  }
+  
+  /* Min/max values */
+  .min-max {
+    display: flex; /* Arrange min and max values side-by-side */
+    justify-content: space-between; /* Evenly distribute within the container */
+  }
+  
+  .min-max p {
+    font-size: 0.9rem; /* Slightly smaller font for compactness */
+    margin: 0 5px; /* Add spacing between min/max values */
+    color: inherit; /* Inherit the parent's color */
+  }
+  
+  /* Loading state */
+  .location-data[data-loading="true"] {
+    opacity: 0.5; /* Reduce opacity during loading for visual feedback */
+  }
+  
