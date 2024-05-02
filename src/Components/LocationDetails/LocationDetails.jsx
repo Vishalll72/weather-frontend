@@ -22,7 +22,7 @@ function LocationDetails() {
     try {
       const formattedDate = formatSelectedDate(selectedDate);
       const response = await fetch(
-        `http://localhost:5000/Cities/${location}/data?date=${formattedDate}`
+        `https://weather-backend-1.onrender.com/Cities/${location}/data?date=${formattedDate}`
       );
       const data = await response.json();
 
