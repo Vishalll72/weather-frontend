@@ -64,7 +64,7 @@ const FutureDataComponent = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/Cities/${location}/future?date=${currentDate}`
+        `https://weather-backend-1.onrender.com/Cities/${location}/future?date=${currentDate}`
       );
 
       if (!response.ok) {
