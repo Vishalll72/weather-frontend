@@ -19,7 +19,7 @@ function CurrentLocationData() {
           .split("/")
           .join("-");
         const responseCurrent = await fetch(
-          `http://localhost:5000/Cities/${location}/current?date=${currentDate}`
+          `https://weather-backend-1.onrender.com/Cities/${location}/current?date=${currentDate}`
         );
         const dataCurrent = await responseCurrent.json();
         setCurrentDayAverages(calculateAverage(dataCurrent));
