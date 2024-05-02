@@ -64,7 +64,7 @@ const FutureDataComponent = () => {
 
     try {
       const response = await fetch(
-        `https://weather-backend-1.onrender.com/Cities/${location}/future?date=${currentDate}`
+        `http://localhost:5000/Cities/${location}/future?date=${currentDate}`
       );
 
       if (!response.ok) {
@@ -89,29 +89,30 @@ const FutureDataComponent = () => {
 
   return (
     <div className="container">
-      <h2>Click on the below button to get data of future dates</h2> <br />
-      <button className="button" onClick={fetchData} disabled={loading}>
-        {loading ? "Loading..." : "Get Future Data"}
-      </button>
-      <button className="button" onClick={handleClose}>
-        Close
-      </button>
-      {error && <p className="error">{error}</p>}
-      {showData && (
-        <div>
-          {futureData.map((item, index) => (
-            <div className="item" key={index}>
-              <h3>Date: {item.date}</h3>
-              <ul>
-                <li>avg: {item.tavg.toFixed(2)}</li>
-                <li>min: {item.tmin.toFixed(2)}</li>
-                <li>max: {item.tmax.toFixed(2)}</li>
-              </ul>
-            </div>
-          ))}
+  <h2>Click on the below button to get data of future dates</h2> <br />
+  <button className="button" onClick={fetchData} disabled={loading}>
+    {loading ? "Loading..." : "Get Future Data"}
+  </button>
+  <button className="button" onClick={handleClose}>
+    Close
+  </button>
+  {error && <p className="error">{error}</p>}
+  {showData && (
+    <div>
+      {futureData.map((item, index) => (
+        <div className="item" key={index}>
+          <h3>Date: {item.date}</h3>
+          <ul>
+            <li>avg: {item.tavg.toFixed(2)}°C</li>
+            <li>min: {item.tmin.toFixed(2)}°C</li>
+            <li>max: {item.tmax.toFixed(2)}°C</li>
+          </ul>
         </div>
-      )}
+      ))}
     </div>
+  )}
+</div>
+
   );
 };
 

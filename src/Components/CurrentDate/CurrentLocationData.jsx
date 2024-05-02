@@ -19,7 +19,7 @@ function CurrentLocationData() {
           .split("/")
           .join("-");
         const responseCurrent = await fetch(
-          `https://weather-backend-1.onrender.com/Cities/${location}/current?date=${currentDate}`
+          `http://localhost:5000/Cities/${location}/current?date=${currentDate}`
         );
         const dataCurrent = await responseCurrent.json();
         setCurrentDayAverages(calculateAverage(dataCurrent));
@@ -73,31 +73,32 @@ function CurrentLocationData() {
 
   return (
     <div className="location-data">
-      <h2>{currentDate ? currentDate : "Loading..."}</h2>
-      <div className="data">
-        <h3>Today's Approx. Temperature</h3>
-        <p>
-          avg:{" "}
-          {currentDayAverages
-            ? currentDayAverages.tavg.toFixed(2)
-            : "Loading..."}
-        </p></div>
-        <div className="min-max">
-          <p>
-            min:{" "}
-            {currentDayAverages
-              ? currentDayAverages.tmin.toFixed(2)
-              : "Loading..."}
-          </p>
-          <p>
-            max:{" "}
-            {currentDayAverages
-              ? currentDayAverages.tmax.toFixed(2)
-              : "Loading..."}
-          </p>
-        </div>
-      
-    </div>
+  <h2>{currentDate ? currentDate : "Loading..."}</h2>
+  <div className="data">
+    <h3>Today's Approx. Temperature</h3>
+    <p>
+      avg:{" "}
+      {currentDayAverages
+        ? currentDayAverages.tavg.toFixed(2) + "\u00B0C"
+        : "Loading..."}
+    </p>
+  </div>
+  <div className="min-max">
+    <p>
+      min:{" "}
+      {currentDayAverages
+        ? currentDayAverages.tmin.toFixed(2) + "\u00B0C"
+        : "Loading..."}
+    </p>
+    <p>
+      max:{" "}
+      {currentDayAverages
+        ? currentDayAverages.tmax.toFixed(2) + "\u00B0C"
+        : "Loading..."}
+    </p>
+  </div>
+</div>
+
   );
 }
 

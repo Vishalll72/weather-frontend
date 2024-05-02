@@ -22,7 +22,7 @@ function LocationDetails() {
     try {
       const formattedDate = formatSelectedDate(selectedDate);
       const response = await fetch(
-        `https://weather-backend-1.onrender.com/Cities/${location}/data?date=${formattedDate}`
+        `http://localhost:5000/Cities/${location}/data?date=${formattedDate}`
       );
       const data = await response.json();
 
@@ -111,7 +111,7 @@ function LocationDetails() {
       </div>
 
       <div className="location">
-        <h2>Chart will available for all previous dates</h2>
+        <h2>Chart will be available for all previous dates</h2>
         <input
           type="date"
           value={selectedDate}

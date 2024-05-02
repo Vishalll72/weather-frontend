@@ -64,7 +64,7 @@ const PreviousDataComponent = () => {
 
     try {
       const response = await fetch(
-        `https://weather-backend-1.onrender.com/Cities/${location}/previous?date=${currentDate}`
+        `http://localhost:5000/Cities/${location}/previous?date=${currentDate}`
       );
 
       if (!response.ok) {
@@ -103,9 +103,9 @@ const PreviousDataComponent = () => {
             <div className="item" key={index}>
               <h3>Date: {item.date}</h3>
               <ul>
-                <li>avg: {item.tavg.toFixed(2)}</li>
-                <li>min: {item.tmin.toFixed(2)}</li>
-                <li>max: {item.tmax.toFixed(2)}</li>
+              <li>avg: {item.tavg.toFixed(2)}°C</li>
+            <li>min: {item.tmin.toFixed(2)}°C</li>
+            <li>max: {item.tmax.toFixed(2)}°C</li>
               </ul>
             </div>
           ))}

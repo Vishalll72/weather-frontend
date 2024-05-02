@@ -56,10 +56,10 @@ function Home() {
   const locations = [
     { name: "Bangalore", image: BangaloreImage },
     { name: "Chennai", image: ChennaiImage },
-    { name: "Delhi", image: NewDelhiImage },
+    { name: "NewDelhi", image: NewDelhiImage },
     { name: "Lucknow", image: LucknowImage },
     { name: "Mumbai", image: MumbaiImage },
-    { name: "Rajasthan", image: RajasthanImage },
+    { name: "Jodhpur", image: RajasthanImage },
   ];
 
   return (
@@ -72,7 +72,7 @@ function Home() {
           <Link to={`/location/${location.name.toLowerCase()}`} key={index}>
             <div className="location-container">
               <img src={location.image} alt={location.name} />
-              <div class="gradient"></div>
+              <div className="gradient"></div>
               <div className="location-name">{location.name}</div>
             </div>
           </Link>
